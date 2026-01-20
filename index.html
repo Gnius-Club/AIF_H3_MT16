@@ -1,284 +1,441 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Playbook — 3º Preparatoria — Misión M16: Auditoría Backend: La Guardia del Director (Auditoría de Seguridad)</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-S6-TM16</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1><span class="book-icon">📋</span> <strong>Playbook Misión M16: Auditoría Backend: La Guardia del Director (Auditoría de Seguridad)</strong></h1>
-    <div class="header-widgets">
-      <div class="timer-container">
-        <span id="timer" hidden>⏱️ 00:00</span>
-        <button id="startStop" hidden>Start</button>
-        <button id="reset" hidden>Reset</button>
-      </div>
-      <div class="theme-toggle">
-        <i class="fas fa-sun"></i>
-        <label class="switch">
-          <input type="checkbox" id="theme-toggle-input" hidden>
-          <span class="slider round"></span>
-        </label>
-        <i class="fas fa-moon"></i>
-      </div>
+    <header>
+        <h1><span class="book-icon">📋</span> <strong>Playbook: Misión 16 - 3o de Preparatoria</strong></h1>
+        <div class="header-widgets">
+            <div class="timer-container">
+                <span id="global-timer">⏱️ 40:00</span>
+                <button id="global-start-stop">Start</button>
+                <button id="global-reset">Reset</button>
+            </div>
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle-input">
+                    <span class="slider round"></span>
+                </label>
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+    <div class="main-container">
+        <aside class="activity-list">
+            <h2>Actividades</h2>
+            <ul>
+                <li><a href="#activity-0">📝</a></li>
+                <li><a href="#activity-1">1</a></li>
+                <li><a href="#activity-2">2</a></li>
+                <li><a href="#activity-3">3</a></li>
+                <li><a href="#activity-4">4</a></li>
+                <li><a href="#activity-5">5</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <!-- ACTIVIDAD 0: DE UN VISTAZO -->
+            <div class="activity-card" id="activity-0">
+                <h2><span class="book-icon">📝</span> De un Vistazo: Comando Central</h2>
+                <p class="overview-subtitle">Todo lo que necesitas para preparar y ejecutar esta misión en minutos.</p>
+                
+                <div class="command-section">
+                    <h3>🎯 Objetivo de Aprendizaje</h3>
+                    <div class="objective-box">
+                        <p><strong>Los estudiantes podrán:</strong> usar WebWave, JDoodle y GitHub para realizar auditoría de entradas/salidas y revisión de dependencias y comprender la seguridad por diseño y la responsabilidad del director como guardián.</p>
+                    </div>
+                </div>
+                <div class="command-section xolo-prompt">
+                    <h3>🤖 Prompt de Referencia para XOLO (Solo para Maestro)</h3>
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <span class="prompt-label">⚠️ NOTA: XOLO ya conoce el tema de esta misión. Este prompt es SOLO de referencia en caso de emergencia técnica:</span>
+                            <button class="copy-btn" onclick="copyPrompt('main-prompt')">
+                                <i class="fas fa-copy"></i> Copiar
+                            </button>
+                        </div>
+                        <pre id="main-prompt">Explícame por qué el backend requiere auditoría de seguridad y cuáles son fallas típicas cuando el código es generado por IA (por ejemplo, sin validación de entradas). Analicemos cómo identificar riesgos en parámetros, respuestas y dependencias, y qué significa aplicar “seguridad por diseño”. Guíame para convertir esto en una checklist de 5 puntos que pueda aplicar a mi código B11–B13 con evidencia.</pre>
+                    </div>
+                </div>
+                <div class="command-section">
+                    <h3>⚡ Puntos Esenciales de la Misión</h3>
+                    <div class="essentials-grid">
+                        <div class="essential-card">
+                            <div class="essential-icon">🎓</div>
+                            <h4>Concepto Clave</h4>
+                            <p>Seguridad por diseño: Es construir un sistema pensando en protegerlo desde el primer momento, como poner cerraduras fuertes mientras construyes una casa en lugar de esperar a terminarla.</p>
+                        </div>
+                        <div class="essential-card">
+                            <div class="essential-icon">🔧</div>
+                            <h4>Habilidad Técnica</h4>
+                            <p>Realizar una auditoría de seguridad en el código para encontrar fallas y riesgos.</p>
+                        </div>
+                        <div class="essential-card">
+                            <div class="essential-icon">🧪</div>
+                            <h4>Experimentación</h4>
+                            <p>Probar con diferentes entradas de datos y dependencias externas para entender limitaciones.</p>
+                        </div>
+                        <div class="essential-card">
+                            <div class="essential-icon">💬</div>
+                            <h4>Interacción con XOLO</h4>
+                            <p>XOLO ya conoce a cada estudiante y el tema de hoy. Solo abren el chat y comienzan a aprender. Tú guías el timing y motivación.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="command-section">
+                    <h3>📦 Checklist de Materiales</h3>
+                    <div class="materials-checklist">
+                        <label><input type="checkbox"> Proyector/pantalla + presentación (5 diapositivas)</label>
+                        <label><input type="checkbox"> Internet estable + Gnius Space con XOLO activo</label>
+                        <label><input type="checkbox"> Computadora personal (1 por estudiante)</label>
+                        <label><input type="checkbox"> Acceso a WebWave, JDoodle y GitHub (https://webwave.me/, https://www.jdoodle.com/, https://github.com/)</label>
+                        <label><input type="checkbox"> Acceso a ChatGPT, Gemini o Claude</label>
+                        <label><input type="checkbox"> ⚠️ Esta misión usa programación de BACKEND y auditoría de CÓDIGO</label>
+                        <label><input type="checkbox"> 📋 Para esta misión: Asegúrate de tener tu repositorio de GitHub listo para revisión.</label>
+                    </div>
+                    <p class="care-reminder"><strong>🛡️ Cuidado del equipo:</strong> Mantener tu equipo de cómputo limpio, no compartir contraseñas y cerrar sesiones al terminar.</p>
+                </div>
+                <div class="command-section">
+                    <h3>🗓️ Secuencia de la Misión (40 min)</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot">1</div>
+                            <div class="timeline-content">
+                                <strong>Intro a la Misión</strong>
+                                <span class="time-badge">2 min</span>
+                                <p>Bienvenida, I Can Statement y contexto de la misión.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">2</div>
+                            <div class="timeline-content">
+                                <strong>A.I. Gym</strong>
+                                <span class="time-badge">8 min</span>
+                                <p>Los estudiantes abren el chat con XOLO y aprenden sobre seguridad por diseño y auditoría de backend (sin prompt específico).</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">3</div>
+                            <div class="timeline-content">
+                                <strong>Brain Spark</strong>
+                                <span class="time-badge">20 min</span>
+                                <p>Idear, construir y experimentar un programa con XOLO.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">4</div>
+                            <div class="timeline-content">
+                                <strong>Gnius STORM - Compartir</strong>
+                                <span class="time-badge">5 min</span>
+                                <p>Demostración y reflexión en parejas.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">5</div>
+                            <div class="timeline-content">
+                                <strong>Entrega de Evidencias</strong>
+                                <span class="time-badge">5 min</span>
+                                <p>Subir capturas a Gnius Space y finalizar misión.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="command-section">
+                    <h3>🚨 Resolución Rápida de Problemas</h3>
+                    <div class="troubleshooting-list">
+                        <ul>
+                            <li><strong>Si los alumnos no pueden ingresar a Gnius Space:</strong> Activa XOLO SOS en <a href="https://xolo.gnius.club" target="_blank">xolo.gnius.club</a> para continuar la misión sin interrumpir la clase.</li>
+                            <li><strong>Si el código en JDoodle no corre:</strong> Verificar que el lenguaje seleccionado sea el correcto y que no falten llaves o puntos y coma.</li><li><strong>Si GitHub no actualiza:</strong> Asegurarse de haber hecho el "Commit" y "Push" correctamente desde su entorno de desarrollo.</li><li><strong>Si hay errores en el código:</strong> Recordar a los estudiantes que XOLO puede ayudar a depurar. Pídeles que copien el error y se lo muestren a XOLO.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- ACTIVIDAD 1: INTRO A LA MISIÓN -->
+            <div class="activity-card" id="activity-1">
+                <div class="activity-header">
+                    <h2>🚀 Actividad 1: Intro a la Misión</h2>
+                    <div class="activity-timer">
+                        <span class="activity-duration">⏱️ 2:00</span>
+                        <button class="timer-start-btn" data-duration="120">Iniciar</button>
+                    </div>
+                </div>
+                <div class="roles-section">
+                    <div class="role-card role-teacher">
+                        <h4>👨‍🏫 Rol del Maestro</h4>
+                        <ul>
+                            <li>Dar la bienvenida con energía.</li>
+                            <li>Pedir a los alumnos que ingresen a Gnius Space.</li>
+                            <li>Proyecta diapositiva 1 con el I Can Statement.</li>
+                            <li>Motiva: "Hoy se convertirán en los guardianes de la seguridad de su propio código.".</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-xolo">
+                        <h4>🤖 Rol de XOLO</h4>
+                        <ul>
+                            <li>XOLO ya está listo y conoce a cada estudiante.</li>
+                            <li>Sabe que hoy toca aprender sobre Seguridad por diseño y auditoría de backend.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-student">
+                        <h4>👦 Rol del Alumno</h4>
+                        <ul>
+                            <li>Escucha la misión del día.</li>
+                            <li>Loguearse en Gnius Space.</li>
+                            <li>Preparación para trabajar en parejas.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide-reference">
+                    <h4>📊 Diapositiva 1: I Can Statement</h4>
+                    <div class="slide-content">
+                        <p><strong>🎯 Hoy seré capaz de:</strong></p>
+                        <p class="highlight-text">🤖 A auditar el backend para que sus aplicaciones sean seguras y profesionales.</p>
+                        <p><strong>Aplicación real:</strong> Los directores de tecnología en empresas globales usan esta tecnología para proteger los datos de millones de usuarios contra ciberataques.</p>
+                        <p><strong>Tu aliado:</strong> XOLO ya sabe qué vas a aprender hoy. ¡Solo abre el chat y comienza!</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ACTIVIDAD 2: A.I. GYM -->
+            <div class="activity-card" id="activity-2">
+                <div class="activity-header">
+                    <h2>🧠 Actividad 2: A.I. Gym</h2>
+                    <div class="activity-timer">
+                        <span class="activity-duration">⏱️ 8:00</span>
+                        <button class="timer-start-btn" data-duration="480">Iniciar</button>
+                    </div>
+                </div>
+                <div class="roles-section">
+                    <div class="role-card role-teacher">
+                        <h4>👨‍🏫 Rol del Maestro</h4>
+                        <ul>
+                            <li>Proyecta diapositiva 2.</li>
+                            <li>Indica: "Abran el chat con XOLO y salúdenlo. Él ya sabe qué les va a enseñar hoy."</li>
+                            <li>Circula para asegurar que todos interactúan con XOLO.</li>
+                            <li>Si alguien tiene dudas, recuérdale: "Pregúntale a XOLO, él te puede explicar de otra forma".</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-xolo">
+                        <h4>🤖 Rol de XOLO</h4>
+                        <p class="xolo-status">✅ XOLO ACTIVO</p>
+                        <ul>
+                            <li>Reconoce al estudiante y sus preferencias de aprendizaje.</li>
+                            <li>Explica cómo identificar riesgos en parámetros y dependencias de forma sencilla.</li>
+                            <li>Introduce el concepto de seguridad por diseño y pensamiento preventivo.</li>
+                            <li>Responde dudas sobre los conceptos.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-student">
+                        <h4>👦 Rol del Alumno</h4>
+                        <ul>
+                            <li>Abrir el chat con XOLO y saludarlo.</li>
+                            <li>Aprender a auditar entradas y salidas para detectar fallas.</li>
+                            <li>Aprender sobre la responsabilidad de proteger el sistema.</li>
+                            <li>Despejar todas sus dudas preguntando a XOLO.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide-reference">
+                    <h4>📊 Diapositiva 2: A.I. GYM</h4>
+                    <div class="slide-content">
+                        <p><strong>💬 Abre el chat con XOLO y salúdalo:</strong></p>
+                        <div class="prompt-box">
+                            <pre>"¡Hola XOLO! Estoy listo para aprender."</pre>
+                        </div>
+                        <p class="highlight-text" style="margin-top: 1rem;">✨ XOLO ya sabe quién eres y qué tema toca hoy. ¡Solo empieza a conversar!</p>
+                        <p class="highlight-text">🎯 Objetivo: Aprender a auditar el backend para aplicar seguridad por diseño.</p>
+                    </div>
+                </div>
+                
+                <div class="optional-script">
+                    <button class="collapsible-button">📖 Ver guion detallado (opcional)</button>
+                    <div class="collapsible-content">
+                        <p class="dialogue assistant">Ahora vamos a aprender algo vital para cualquier desarrollador: la seguridad. Abran el chat con XOLO y salúdenlo. XOLO ya los conoce y sabe exactamente qué les va a enseñar hoy. No necesitan escribir un prompt especial, solo empiecen a platicar con él. Vamos a explorar por qué el backend necesita ser auditado, especialmente cuando usamos IA para generar código. XOLO les explicará cómo identificar riesgos y qué significa la 'seguridad por diseño'. Pregúntenle todo lo que necesiten para entender cómo proteger sus aplicaciones y a sus usuarios.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ACTIVIDAD 3: BRAIN SPARK -->
+            <div class="activity-card" id="activity-3">
+                <div class="activity-header">
+                    <h2>💡 Actividad 3: Brain Spark</h2>
+                    <div class="activity-timer">
+                        <span class="activity-duration">⏱️ 20:00</span>
+                        <button class="timer-start-btn" data-duration="1200">Iniciar</button>
+                    </div>
+                </div>
+                <div class="roles-section">
+                    <div class="role-card role-teacher">
+                        <h4>👨‍🏫 Rol del Maestro</h4>
+                        <ul>
+                            <li>Proyecta la diapositiva 3.</li>
+                            <li>Indica: "Pidan a XOLO que los ayude a idear un proyecto. Cuando tengan su GCS, pásenlo a bloques en MakeCode, prueben en el simulador y luego con el hardware real".</li>
+                            <li>Entrega por parejas los Proyectos de Backend conforme los alumnos prueben su GCS en el simulador.</li>
+                            <li>Si hay errores, recuerda: "Pregúntenle a XOLO, él los ayuda a depurar".</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-xolo">
+                        <h4>🤖 Rol de XOLO</h4>
+                        <p class="xolo-status">✅ XOLO ACTIVO</p>
+                        <ul>
+                            <li>Ayuda a desarrollar una idea y un VIBE que aplique auditoría de seguridad.</li>
+                            <li>Entrega el GCS de la idea del genio.</li>
+                            <li>Resuelve errores de sintaxis o lógica.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-student">
+                        <h4>👦 Rol del Alumno</h4>
+                        <ul>
+                            <li>Trabajar con XOLO una idea y un VIBE para auditar su backend.</li>
+                            <li>Traducir el GCS de XOLO a bloques en MakeCode.</li>
+                            <li>Depurar su programa con XOLO si hay errores.</li>
+                            <li>Revisar su repositorio de GitHub y probar.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide-reference">
+                    <h4>📊 Diapositiva 3: Brain Spark</h4>
+                    <div class="slide-content">
+                        <p><strong>1. 💬 Pide a XOLO que te ayude a crear:</strong></p>
+                        <div class="prompt-box">
+                            <pre>"Ayúdame a construir y aplicar mi checklist de 5 puntos con Vibe Coding: define 5 controles (validación, manejo de errores, exposición de info, dependencias, etc.), aplícalos a mi backend y marca Cumple/No cumple con una recomendación concreta por cada “No”. Ejecuta: entrega la checklist final aplicada y selecciona 1 vulnerabilidad para proponer un prompt de corrección (sin implementar aún, solo propuesta)."</pre>
+                        </div>
+                        <p style="margin-top: 1.5rem;"><strong>2. 🔬 Experimenta y descubre con tu programa:</strong></p>
+                        <ul>
+                            <li>¿Tu checklist detectó alguna falla que no habías visto antes?</li>
+                            <li>¿Qué pasa si ingresas datos maliciosos en un campo de texto de tu aplicación?</li>
+                            <li>¿Funciona igual la seguridad si usas una librería externa desactualizada vs una nueva?</li>
+                            <li>¿Cómo aplicaste el pensamiento preventivo al revisar tu código hoy?</li>
+                            <li>¿Por qué un director de tecnología debe considerarse el guardián de la seguridad del sistema?</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="optional-script">
+                    <button class="collapsible-button">📖 Ver guion detallado (opcional)</button>
+                    <div class="collapsible-content">
+                        <p class="dialogue assistant">¡Es hora de crear y proteger! Vamos a idear, definir un VIBE y usar XOLO para generar un GCS que audite nuestro backend. El flujo es simple: ideen su checklist, definan el VIBE de seguridad, obtengan el GCS de XOLO y aplíquenlo en JDoodle o GitHub. Por ejemplo, podrían auditar un sistema de login para asegurar que nadie pueda entrar sin permiso. No olviden las preguntas de experimentación para ver si su código realmente aguanta pruebas de fuego. Si tienen errores o dudas, pregúntenle a XOLO, él los ayudará a depurar y a fortalecer sus defensas. ¡Asegúrense de que su sistema sea impenetrable antes de entregarlo!</p>
+                    </div>
+                </div>
+                <div class="challenge-prompt">
+                    <h4>🚀 Prompt de Desafío (para quienes terminen rápido)</h4>
+                    <div class="prompt-box">
+                        <p><strong>Si ya experimentaste con todo, pregunta a XOLO:</strong></p>
+                        <p class="challenge-text">"Ya probé con mi checklist básica. ¿Puedes enseñarme cómo hacer que mi backend use encriptación avanzada para proteger contraseñas?"</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ACTIVIDAD 4: GNIUS STORM - COMPARTIR -->
+            <div class="activity-card" id="activity-4">
+                <div class="activity-header">
+                    <h2>⚡ Actividad 4: Gnius STORM - Compartir y Reflexionar</h2>
+                    <div class="activity-timer">
+                        <span class="activity-duration">⏱️ 5:00</span>
+                        <button class="timer-start-btn" data-duration="300">Iniciar</button>
+                    </div>
+                </div>
+                <div class="roles-section">
+                    <div class="role-card role-teacher">
+                        <h4>👨‍🏫 Rol del Maestro</h4>
+                        <ul>
+                            <li>Organiza las parejas para compartir.</li>
+                            <li>Gestiona los tiempos: 2 min demo + 2 min reflexión + 1 min cierre.</li>
+                            <li>Facilita retroalimentación constructiva.</li>
+                            <li>Cierra con reflexión sobre aplicaciones reales.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-xolo">
+                        <h4>🤖 Rol de XOLO</h4>
+                        <p class="xolo-status">⏸️ XOLO EN ESPERA</p>
+                        <ul>
+                            <li>Disponible solo si hay dudas finales urgentes.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-student">
+                        <h4>👦 Rol del Alumno</h4>
+                        <ul>
+                            <li>Demuestra su programa funcionando a otra pareja.</li>
+                            <li>Explica qué vulnerabilidades encontró y cómo planea corregirlas.</li>
+                            <li>Comparte un descubrimiento interesante.</li>
+                            <li>Da retroalimentación positiva al compañero.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide-reference">
+                    <h4>📊 Diapositiva 4: Think-Pair-Share</h4>
+                    <div class="slide-content tps-structure">
+                        <div class="tps-phase">
+                            <h4>🤔 THINK (30 seg)</h4>
+                            <p>Reflexión individual: ¿Qué partes de tu código eran más vulnerables? ¿Qué te sorprendió de la auditoría?</p>
+                        </div>
+                        <div class="tps-phase">
+                            <h4>👥 PAIR (2 min)</h4>
+                            <p>Con otra pareja: Demuestren su programa y expliquen su experiencia</p>
+                            <p class="highlight-text">Frase guía: "Mi código tenía riesgos en la validación de entradas. Me sorprendió que la IA a veces olvida protecciones básicas."</p>
+                        </div>
+                        <div class="tps-phase">
+                            <h4>💬 SHARE (2 min)</h4>
+                            <p>Retroalimentación mutua y cierre del maestro.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ACTIVIDAD 5: ENTREGA DE EVIDENCIAS -->
+            <div class="activity-card" id="activity-5">
+                <div class="activity-header">
+                    <h2>✅ Actividad 5: Entrega de Evidencias</h2>
+                    <div class="activity-timer">
+                        <span class="activity-duration">⏱️ 5:00</span>
+                        <button class="timer-start-btn" data-duration="300">Iniciar</button>
+                    </div>
+                </div>
+                <div class="roles-section">
+                    <div class="role-card role-teacher">
+                        <h4>👨‍🏫 Rol del Maestro</h4>
+                        <ul>
+                            <li>Proyecta diapositiva 5 con las instrucciones.</li>
+                            <li>Guía a los estudiantes para tomar las capturas.</li>
+                            <li>Asegura que todos suban sus evidencias a Gnius Space.</li>
+                            <li>Felicita al grupo por completar la misión.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-xolo">
+                        <h4>🤖 Rol de XOLO</h4>
+                        <p class="xolo-status">⭕ XOLO FINALIZADO</p>
+                        <ul>
+                            <li>La interacción con XOLO ha terminado para esta misión.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-student">
+                        <h4>👦 Rol del Alumno</h4>
+                        <ul>
+                            <li>Tomar screenshot de su código en MakeCode.</li>
+                            <li>Tomar screenshot de su conversación con XOLO.</li>
+                            <li>Subir ambas evidencias a Gnius Space.</li>
+                            <li>Dar click en "Finalizar Misión".</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide-reference">
+                    <h4>📊 Diapositiva 5: ¡Misión Cumplida!</h4>
+                    <div class="slide-content">
+                        <p><strong>📸 Para terminar, sube tus evidencias a Gnius Space:</strong></p>
+                        <ol>
+                            <li>Una captura de pantalla de tu programa final en <strong>MakeCode</strong>.</li>
+                            <li>Una captura de pantalla de tu conversación con <strong>XOLO</strong> donde te dio tu GCS.</li>
+                        </ol>
+                        <p class="highlight-text" style="margin-top: 1rem;">¡No olvides dar click en el botón <strong>"Finalizar Misión"</strong> cuando termines!</p>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
-  </header>
-  <div class="main-container">
-    <aside class="activity-list">
-      <h2>Actividades</h2>
-      <ul>
-        <li><a href="#activity-0">📝</a></li>
-        <li><a href="#activity-1">1</a></li>
-        <li><a href="#activity-2">2</a></li>
-        <li><a href="#activity-3">3</a></li>
-        <li><a href="#activity-4">4</a></li>
-        <li><a href="#activity-5">5</a></li>
-      </ul>
-      <div class="sidebar-info">
-        <p>💡 Cada actividad está cuidadosamente diseñada para involucrar a los estudiantes.</p>
-        <p>⏱️ Se proporcionan estimaciones de tiempo para cada actividad para ayudarle a mantener el rumbo.</p>
-      </div>
-    </aside>
-    <main class="content">
-      <div class="progress-bar" hidden>
-        <div class="progress"></div>
-      </div>
-      <button id="toggle-dialogues" hidden>Mostrar todos los diálogos</button>
-      <!-- 0) De un Vistazo -->
-      <section class="activity-card" id="activity-0">
-        <h2 class="activity-title">📝 De un Vistazo: Misión M16: Auditoría Backend: La Guardia del Director (Auditoría de Seguridad)</h2>
-        <p class="activity-purpose">Resumen de objetivos, secuencia y entregables.</p>
-        <div class="overview">
-          <section class="overview-block">
-            <h3>Objetivos e “I Can”</h3>
-            <ul>
-              <li>Puedo explicar vulnerabilidades comunes de seguridad en el backend y cómo la IA puede mitigarlas.</li>
-              <li>Puedo auditar código backend usando una checklist de seguridad y proponer soluciones.</li>
-            </ul>
-          </section>
-          <section class="overview-block">
-            <h3>Secuencia y tiempos</h3>
-            <ol>
-              <li>Saludo Interactivo con IA — 3 min</li>
-              <li>“I Can” + Desafío — 5–7 min</li>
-              <li>AI GYM — 10–12 min</li>
-              <li>Brain Spark — 17–20 min</li>
-              <li>GNIUS STORM — 5 min</li>
-            </ol>
-          </section>
-          <section class="overview-block">
-            <h3>Entregable del Micro-Proyecto</h3>
-            <ul>
-              <li>Una checklist de 5 puntos de seguridad aplicada a código backend (de M11-M13), con recomendaciones de mitigación, y un prompt para corrección de vulnerabilidad O una política de seguridad O un reporte de vulnerabilidad famosa.</li>
-            </ul>
-          </section>
-          <section class="overview-block">
-            <h3>Criterios de calidad</h3>
-            <ul>
-              <li>Claridad en la identificación de vulnerabilidades de seguridad.</li>
-              <li>Relevancia y viabilidad de las recomendaciones de seguridad propuestas.</li>
-              <li>Precisión en la aplicación de la checklist de seguridad.</li>
-              <li>Coherencia del prompt/política/reporte con la vulnerabilidad identificada.</li>
-              <li>Comprensión demostrada del principio de "seguridad por diseño".</li>
-            </ul>
-          </section>
-          <section class="overview-block">
-            <h3>Materiales y preparación</h3>
-            <ul>
-              <li>Proyector e internet</li>
-              <li>LLM (Xolo)</li>
-              <li>Acceso a código de backend de las misiones M11-M13</li>
-              <li>Editor de texto/código</li>
-              <li>Ejemplo mínimo de vulnerabilidad y su corrección listo</li>
-            </ul>
-          </section>
-        </div>
-      </section>
-      <!-- 1) Saludo Interactivo con IA -->
-      <section class="activity-card" id="activity-1">
-        <h2 class="activity-title">Saludo Interactivo con IA</h2>
-        <p class="activity-purpose">Enmarcar foco en la auditoría de seguridad backend y activar a Xolo con perfil/intereses.</p>
-        <div class="steps">
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 1 — Bienvenida y foco</h3>
-              <p class="step-instructions">Proyectar Diapositiva 2. Presenta el tema y su valor profesional (Auditoría de Seguridad Backend).</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">Equipo: hoy profundizaremos en la "Guardia del Director": la auditoría de seguridad en el backend. Este es un rol crítico, ya que los riesgos en el servidor son mayores y pueden comprometer todo el sistema. Nuestra meta es identificar y mitigar vulnerabilidades.</p>
-              </div>
-            </div>
-          </article>
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 2 — Activación con Xolo</h3>
-              <p class="step-instructions">Cada estudiante envía a Xolo: “Hola Xolo, soy [Nombre], perfil [X]; me interesa [Y]. Misión M16. Necesito foco en Auditoría de Seguridad Backend.”</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">Activen a Xolo con su perfil e intereses. Confirmen que comprendieron el criterio de hoy y sigan sus indicaciones personalizadas para la auditoría de seguridad.</p>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-      <!-- 2) “I Can” + Desafío -->
-      <section class="activity-card" id="activity-2">
-        <h2 class="activity-title">“I Can Statement” + Desafío</h2>
-        <p class="activity-purpose">Alinear expectativas y definir el reto práctico de la auditoría de seguridad.</p>
-        <div class="steps">
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 1 — Presenta el reto</h3>
-              <p class="step-instructions">Proyectar Diapositiva 3. Describe el reto de ser un auditor de seguridad y la meta observable.</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">El reto es actuar como un "Auditor de Seguridad" para nuestro código de backend. Debemos identificar posibles puntos débiles, especialmente aquellos que la IA pudo haber pasado por alto al generar código. Evaluaremos con una checklist de seguridad y evidenciaremos nuestras recomendaciones.</p>
-              </div>
-            </div>
-          </article>
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 2 — Escribe tu “I Can”</h3>
-              <p class="step-instructions">Proyectar Diapositiva 4. Cada estudiante redacta 1 “I Can” alineado al entregable.</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">Formula tu “Puedo…” en 1 frase: acción + criterio + resultado. Ej.: “Puedo [auditar el código backend] usando [una checklist de seguridad] para lograr [identificar y proponer mitigaciones a vulnerabilidades].”</p>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-      <!-- 3) AI GYM -->
-      <section class="activity-card" id="activity-3">
-        <h2 class="activity-title">AI GYM</h2>
-        <p class="activity-purpose">Formalizar el marco de auditoría de seguridad de código backend.</p>
-        <div class="steps">
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 1 — Marco del día</h3>
-              <p class="step-instructions">Proyectar Diapositiva 5. Introduce el marco de "Auditoría de seguridad de código backend". Explica que la IA puede olvidar prácticas de seguridad básicas, presenta vulnerabilidades comunes (ej. falta de validación de entradas), revisión de dependencias y el principio de "seguridad por diseño".</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">Hoy, Xolo vuelve a su rol de auditor, pero en el backend, donde los riesgos son mayores. Es crucial entender que la IA, al generar código, puede omitir prácticas de seguridad básicas. Nos enfocaremos en vulnerabilidades comunes como la falta de validación de entradas. Un error común es asumir que el código generado por IA es inherentemente seguro. Siempre auditen. Usen el principio de "seguridad por diseño" como guía.</p>
-              </div>
-            </div>
-          </article>
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 2 — Mini-demostración</h3>
-              <p class="step-instructions">Proyectar Diapositiva 6. Construye un ejemplo mínimo de código backend con una vulnerabilidad (ej. falta de validación de entrada) y muestra cómo identificarla.</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">Observa este snippet de código. ¿Qué pasa si un usuario envía texto donde se espera un número? Esto es una falta de validación de entradas. Para validar, pregunten: ¿se está verificando el tipo de dato? ¿Se está sanitizando la entrada para evitar inyecciones? Estos son checks objetivos.</p>
-              </div>
-            </div>
-          </article>
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 3 — Check rápido</h3>
-              <p class="step-instructions">Proyectar Diapositiva 7. Verifica comprensión con 2 preguntas breves sobre vulnerabilidades backend o seguridad por diseño.</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">Pregunta 1: ¿Por qué la validación de entradas es crítica en el backend? Pregunta 2: ¿Qué significa "seguridad por diseño"?</p>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-      <!-- 4) Brain Spark -->
-      <section class="activity-card" id="activity-4">
-        <h2 class="activity-title">Brain Spark</h2>
-        <p class="activity-purpose">Producir el entregable tangible del Micro-Proyecto: la auditoría de seguridad.</p>
-        <div class="steps">
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 1 — Producción</h3>
-              <p class="step-instructions">Proyectar Diapositiva 8. Aplica la checklist de 5 puntos de seguridad clave a tu código de backend de las misiones M11-M13. Marca si cada punto se cumple y añade una recomendación concreta si no. Tiempo de trabajo autónomo.</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">N/A</p>
-              </div>
-            </div>
-          </article>
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 2 — Iteración</h3>
-              <p class="step-instructions">Proyectar Diapositiva 9. Con el análisis de la checklist, elige una de las siguientes opciones: escribir el prompt para que la IA corrija una de las vulnerabilidades encontradas, proponer una política de seguridad para tu proyecto, o investigar y reportar sobre una vulnerabilidad famosa que podría haber sido evitada con tu checklist.</p>
-            </div>
-            <div class="collapsible">
-              <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-              <div class="collapsible-content">
-                <p class="dialogue assistant">Antes de cerrar: valida que tu recomendación o tu prompt/política/reporte sea específico y accionable. Si no es lo suficientemente claro, ajústalo para que cualquier desarrollador pueda implementarlo.</p>
-              </div>
-            </div>
-          </article>
-          <article class="step-card">
-            <div class="step-content">
-              <h3 class="step-title">Paso 3 — Evidencia</h3>
-            <p class="step-instructions">Proyectar Diapositiva 10. Solicita evidencia: la checklist completada y el prompt/política/reporte generado.</p>
-          </div>
-          <div class="collapsible">
-            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-            <div class="collapsible-content">
-              <p class="dialogue assistant">Entrega tu trabajo con nombre: M16_AuditoriaBackend_[Equipo/Nombre]. Incluye la checklist y el producto de tu iteración (prompt, política o reporte).</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-    <!-- 5) GNIUS STORM -->
-    <section class="activity-card" id="activity-5">
-      <h2 class="activity-title">GNIUS STORM</h2>
-      <p class="activity-purpose">Exhibir resultados y cerrar con síntesis accionable.</p>
-      <div class="steps">
-        <article class="step-card">
-          <div class="step-content">
-            <h3 class="step-title">Paso 1 — Showcase relámpago</h3>
-            <p class="step-instructions">2–3 personas/equipos muestran evidencia (30–45 s c/u): la vulnerabilidad identificada, la recomendación/solución propuesta y el criterio de seguridad aplicado.</p>
-          </div>
-          <div class="collapsible">
-            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-            <div class="collapsible-content">
-              <p class="dialogue assistant">Enfoca tu presentación en la decisión clave de seguridad, la evidencia de la vulnerabilidad y la justificación de tu recomendación.</p>
-            </div>
-          </div>
-        </article>
-        <article class="step-card">
-          <div class="step-content">
-            <h3 class="step-title">Paso 2 — Cierre ejecutivo</h3>
-            <p class="step-instructions">Proyectar Diapositiva 11. Síntesis: 1 aprendizaje clave del marco, 1 criterio que más impactó, 1 siguiente paso aplicable (p. ej., integrar seguridad en el ciclo de desarrollo).</p>
-          </div>
-          <div class="collapsible">
-            <button type="button" class="collapsible-button">Diálogo Sugerido</button>
-            <div class="collapsible-content">
-              <p class="dialogue assistant">Síntesis: [aprendizaje clave sobre seguridad]. Criterio clave: [criterio de seguridad que más impactó, ej. validación de entradas]. Siguiente paso aplicado: [acción concreta, ej. integrar auditorías de seguridad en cada fase del desarrollo].</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
-  </div>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-</html>
+</html></html>
